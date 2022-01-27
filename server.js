@@ -33,6 +33,10 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to the home page" });
 });
 
+//routes
+require("./app/routes/auth.routes")(app);
+require("./app/routes/user.routes")(app);
+
 //set up port and start server
 const port = process.env.PORT || 8080;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
